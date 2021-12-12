@@ -1,3 +1,4 @@
+import uvicorn
 from typing import Union
 from fastapi import FastAPI
 from findArea import find_area
@@ -21,3 +22,5 @@ def access_acre(calculate: Area): # assign "Area" to the variable "calculate"
     result = find_area(calculate.length, calculate.width)
     return {"Total field in acre": round(result, 2)}
 
+if __name__ == "__main__":
+    uvicorn.run()
